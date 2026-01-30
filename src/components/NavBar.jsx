@@ -1,38 +1,44 @@
-import React, { useState } from 'react';
-import './NavBar.css';
-import logo from '../assets/logo.png'; // Adjust path if needed
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
+import "./NavBar.css";
+import logo from "../assets/logo.png";
+import mobileLogo from "../assets/MobileLogo.png";
 
-export default function NavBar() {
-  // State to control mobile menu open/close
+function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Toggle menu when hamburger is clicked
-  const handleMenuToggle = () => setMenuOpen(!menuOpen);
-
-  // Close menu when a link is clicked (optional, for better UX)
-  const handleLinkClick = () => setMenuOpen(false);
+    const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setMenuOpen(false);
+  };
 
   return (
-    <header className="site-header">
-      {/* Logo: replace src with your logo path */}
-      <img src={logo} alt="Alim Lab Logo" className="logo" />
+    <>
+      <header className="site-header">
+        <a href="#" onClick={scrollToTop} className="logo-link">
+          <img src={mobileLogo} alt="Alima Lab logo" className="logo mobile-logo" />
+          <img src={logo} alt="Alima Lab logo" className="logo desktop-logo" />
+        </a>
 
-      {/* Hamburger button for mobile */}
-      <button
-        className="hamburger"
-        aria-label="Toggle navigation"
-        onClick={handleMenuToggle}
-      >
-        {/* Unicode hamburger icon */}
-        &#9776;
-      </button>
+        <button 
+          className="hamburger" 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
 
-      {/* Navigation links */}
-      <nav className={`main-nav${menuOpen ? ' open' : ''}`}>
-        <a href="#projects" onClick={handleLinkClick}>Lab Projects</a>
-        <a href="#about" onClick={handleLinkClick}>UX Stories</a>
-        <a href="#contact" onClick={handleLinkClick}>About</a>
-      </nav>
-    </header>
+        <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        </nav>
+      </header>
+      
+      <Outlet />
+    </>
   );
 }
+
+export default NavBar;

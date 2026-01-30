@@ -1,0 +1,221 @@
+/* 1. Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --rose-dark: #D6ABA6;
+  --rose-light: #FAE2DF;
+  --green-dark: #386150;
+  --green-mid: #58B09C;
+  --green-light: #CAF7E2;
+  --text-main: #386150;
+  --text-light: #ffffff;
+  --font-body: 'Poppins', system-ui, sans-serif; /* Fixed: Poppins! */
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--rose-light);
+  line-height: 1.6;
+}
+
+/* 2. Layout */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 1rem 2rem; /* Mobile padding */
+}
+
+/* 3. Sections */
+.section {
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(56, 97, 80, 0.1);
+}
+
+.about {
+  background: linear-gradient(135deg, var(--green-light) 0%, var(--rose-light) 100%);
+  text-align: center;
+}
+
+.projects,
+.skills {
+  background: var(--green-light);
+}
+
+.contact {
+  background: var(--rose-light);
+  border: 2px solid var(--green-light);
+}
+
+.section h1,
+.section h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.section p {
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+.content-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 4. Buttons */
+.btn-primary {
+  display: inline-block;
+  background: var(--green-mid);
+  color: var(--text-light);
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(88, 176, 156, 0.3);
+}
+
+/* 5. Projects Grid */
+.project-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.project-card {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  border-left: 4px solid var(--green-mid);
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.project-tags {
+  font-size: 0.85rem;
+  color: var(--green-dark);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+/* 6. Skills Grid */
+.skills-grid {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.skills-grid li {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+/* 7. Contact Links */
+.contact-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-links a {
+  color: var(--green-mid);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* 8. Footer */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--green-dark);
+  color: var(--text-light);
+}
+
+/* 9. Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================
+   LARGE PHONES (480px+)
+   ================================ */
+@media (min-width: 480px) {
+  main {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .section {
+    padding: 2.5rem 2rem;
+  }
+
+  .section h1,
+  .section h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* ================================
+   TABLETS (768px+)
+   ================================ */
+@media (min-width: 768px) {
+  main {
+    padding: 7rem 2rem 4rem;
+  }
+
+  .section {
+    padding: 3rem 2.5rem;
+  }
+
+  .section h1,
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================================
+   DESKTOP (1024px+)
+   ================================ */
+@media (min-width: 1024px) {
+  main {
+    padding: 8rem 2rem 4rem;
+  }
+
+  .section h1,
+  .section h2 {
+    font-size: 2.5rem;
+  }
+
+  .content-wrapper {
+    max-width: 700px;
+  }
+}
