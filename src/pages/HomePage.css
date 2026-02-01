@@ -124,12 +124,21 @@ main {
   color: var(--rose-light);
   text-decoration: none;
   font-size: 0.9rem;
-  margin-top: 0.5rem;
-  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer-link:hover {
-  text-decoration: underline;
+  background: var(--rose-bright);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 145, 138, 0.4);
 }
 
 /* ================================
@@ -153,7 +162,7 @@ main {
   align-items: center;
 }
 
-/* About Me Section - Reverse gradient (pink top-left, green bottom-right) */
+/* About Me Section */
 .about {
   background: 
     linear-gradient(315deg, 
@@ -174,7 +183,6 @@ main {
   align-items: center;
 }
 
-/* Glow effect top-left (pink) */
 .about::before {
   content: '';
   position: absolute;
@@ -188,7 +196,6 @@ main {
   z-index: 0;
 }
 
-/* Glow effect bottom-right (green) */
 .about::after {
   content: '';
   position: absolute;
@@ -230,19 +237,19 @@ main {
   color: var(--burgundy);
 }
 
-/* Projects - Neutral background */
+/* Projects */
 .projects {
   background: rgba(255, 255, 255, 0.5);
   border-top: 4px solid var(--green-mid);
 }
 
-/* Skills - Green gradient */
+/* Skills */
 .skills {
   background: linear-gradient(180deg, var(--green-light) 0%, rgba(88, 176, 156, 0.15) 100%);
   border-top: 4px solid var(--green-mid);
 }
 
-/* Contact - Mixed gradient, centered */
+/* Contact */
 .contact {
   background: linear-gradient(135deg, var(--rose-light) 0%, var(--green-light) 100%);
   border: 2px solid var(--green-mid);
@@ -265,7 +272,6 @@ main {
   font-size: 1.5rem;
 }
 
-/* Section titles with accent */
 .projects h2 {
   color: var(--green-dark);
 }
@@ -302,7 +308,6 @@ main {
   gap: 2rem;
 }
 
-/* Base Project Card */
 .project-card {
   padding: 2rem;
   border-radius: 16px;
@@ -315,7 +320,7 @@ main {
   overflow: hidden;
 }
 
-/* ODD cards (1st, 3rd) - Pink/Rose theme */
+/* ODD cards - Pink theme */
 .project-card:nth-child(odd) {
   background: 
     linear-gradient(135deg, 
@@ -373,7 +378,7 @@ main {
   color: var(--rose-bright);
 }
 
-/* EVEN cards (2nd) - Green theme */
+/* EVEN cards - Green theme */
 .project-card:nth-child(even) {
   background: 
     linear-gradient(135deg, 
@@ -491,7 +496,7 @@ main {
   box-shadow: 0 4px 12px rgba(114, 47, 55, 0.3);
 }
 
-/* Project Features List - Arrow bullets */
+/* Project Features */
 .project-features {
   list-style: none;
   display: flex;
@@ -517,7 +522,7 @@ main {
   font-weight: 600;
 }
 
-/* Project Tags - All green pills */
+/* Project Tags */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -559,7 +564,6 @@ main {
   transition: all 0.3s ease;
 }
 
-/* Alternating border colors for skill categories */
 .skill-category:nth-child(1) {
   border-left: 4px solid var(--green-mid);
   border-bottom: 2px solid var(--green-light);
@@ -589,7 +593,6 @@ main {
   gap: 0.5rem;
 }
 
-/* Alternating arrow colors */
 .skill-category:nth-child(1) h3::before {
   content: '▸';
   color: var(--green-mid);
@@ -653,9 +656,18 @@ main {
 /* 6. Footer */
 .site-footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   background: linear-gradient(135deg, var(--green-dark) 0%, var(--burgundy) 100%);
   color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 /* ================================
@@ -687,7 +699,6 @@ main {
     font-size: 1.75rem;
   }
 
-  /* Larger glow effects on larger phones */
   .about::before {
     width: 220px;
     height: 220px;
@@ -728,12 +739,10 @@ main {
     font-size: 2rem;
   }
 
-  /* Keep cards stacked vertically */
   .project-grid {
     gap: 2rem;
   }
 
-  /* Horizontal buttons on tablet+ */
   .hero-buttons {
     flex-direction: row;
     justify-content: center;
@@ -747,7 +756,6 @@ main {
     padding: 0.75rem 2rem;
   }
 
-  /* Project links horizontal on tablet+ */
   .project-links {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -761,7 +769,6 @@ main {
     white-space: nowrap;
   }
 
-  /* Skills horizontal on tablet+ */
   .skills-container {
     flex-direction: row;
     justify-content: space-between;
@@ -771,7 +778,6 @@ main {
     flex: 1;
   }
 
-  /* Larger glow effects on tablet */
   .about::before {
     width: 280px;
     height: 280px;
@@ -838,12 +844,10 @@ main {
     font-size: 1.1rem;
   }
 
-  /* More space between skill categories */
   .skills-container {
     gap: 2rem;
   }
 
-  /* Larger glow effects on desktop */
   .about::before {
     width: 350px;
     height: 350px;

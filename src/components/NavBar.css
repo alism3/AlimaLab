@@ -115,7 +115,7 @@
 }
 
 /* ================================
-   iPAD+ (650px) - Switch to desktop logo
+   iPAD+ (650px)
    ================================ */
 @media (min-width: 650px) {
   .site-header {
@@ -126,12 +126,10 @@
     height: 75px;
   }
 
-  /* Hide mobile logo on iPad and up */
   .mobile-logo {
     display: none;
   }
 
-  /* Show desktop logo on iPad and up */
   .desktop-logo {
     display: block;
   }
