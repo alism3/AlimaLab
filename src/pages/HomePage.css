@@ -14,21 +14,13 @@ main {
 /* Name Title - League Script Font */
 .name-title {
   font-family: 'League Script', cursive;
-  font-size: clamp(4rem, 10vw, 6rem) !important; /* Override .section h1 */
+  font-size: clamp(4rem, 10vw, 6rem) !important;
   font-weight: 400;
-  color: var(--green-dark); /* Pink from your palette */
+  color: var(--green-dark);
   line-height: 1.1;
 }
 
 /* Social Icons */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-  width: 100%;
-}
-
 .social-icons {
   display: flex;
   justify-content: center;
@@ -54,12 +46,6 @@ main {
   cursor: pointer;
 }
 
-
-/* Tagline - Bold */
-.tagline {
-  font-weight: 700;
-}
-
 .social-icons a:hover {
   color: var(--text-light);
   background: var(--rose-bright);
@@ -68,7 +54,82 @@ main {
   box-shadow: 0 8px 20px rgba(232, 145, 138, 0.4);
 }
 
-/* 2. Sections */
+/* Tagline - Bold */
+.tagline {
+  font-weight: 700;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(56, 97, 80, 0.3);
+}
+
+.hero-buttons .btn-primary {
+  background: var(--green-mid);
+  color: var(--text-light);
+  border: 3px solid var(--green-dark);
+}
+
+.hero-buttons .btn-primary:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(56, 97, 80, 0.4);
+}
+
+.hero-buttons .btn-secondary {
+  background: var(--rose-bright);
+  color: white;
+  border: 3px solid var(--burgundy);
+}
+
+.hero-buttons .btn-secondary:hover {
+  background: var(--burgundy);
+  border-color: var(--burgundy);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(114, 47, 55, 0.5);
+}
+
+/* Footer Link */
+.footer-link {
+  color: var(--rose-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   SECTIONS
+   ================================ */
 .section {
   padding: 2rem 1.5rem;
   margin-bottom: 1.5rem;
@@ -82,7 +143,7 @@ main {
   padding: 6rem 3rem;
   margin-bottom: 2rem;
   display: flex;
-  justify-content: center ;
+  justify-content: center;
   align-items: center;
 }
 
@@ -119,41 +180,173 @@ main {
 
 /* 3. Projects Grid */
 .project-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .project-card {
-  padding: 1.5rem;
+  padding: 2rem;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 16px;
   border-left: 4px solid var(--green-mid);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 350px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(56, 97, 80, 0.15);
 }
 
 .project-card h3 {
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  color: var(--green-dark);
 }
 
+.project-card > p {
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  background: var(--green-dark);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.project-link:hover {
+  background: var(--green-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 97, 80, 0.3);
+}
+
+/* Project Features List - Arrow bullets */
+.project-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 2rem; 
+  padding-left: 0;
+  flex-grow: 1; 
+}
+
+.project-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.project-features li::before {
+  content: '→';
+  color: var(--green-mid);
+  font-weight: 600;
+}
+
+/* Project Tags - Green pills */
 .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tags span {
+  background: var(--green-light);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--green-dark);
+  font-weight: 500;
+  border: 1px solid var(--green-mid);
+}
+
+/* 4. Skills Section */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-category {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border-left: 4px solid var(--green-mid);
+  box-shadow: 0 4px 10px rgba(56, 97, 80, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(56, 97, 80, 0.15);
+}
+
+.skill-category h3 {
+  color: var(--green-dark);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-category h3::before {
+  content: '▸';
+  color: var(--rose-bright);
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.skill-list li {
+  background: var(--green-light);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
   font-size: 0.85rem;
   color: var(--green-dark);
   font-weight: 500;
-  margin-top: 0.5rem;
+  border: 1px solid var(--green-mid);
+  transition: all 0.3s ease;
 }
 
-/* 4. Skills Grid */
-.skills-grid {
-  list-style: none;
-  display: grid;
-  gap: 0.75rem;
-}
-
-.skills-grid li {
-  background: rgba(255, 255, 255, 0.6);
-  padding: 1rem;
-  border-radius: 12px;
+.skill-list li:hover {
+  background: var(--green-mid);
+  color: white;
+  transform: scale(1.05);
 }
 
 /* 5. Contact Links */
@@ -182,6 +375,9 @@ main {
   color: var(--text-light);
 }
 
+/* ================================
+   LARGE PHONES (480px+)
+   ================================ */
 @media (min-width: 480px) {
   main {
     padding: 6rem 1.5rem 3rem;
@@ -192,7 +388,7 @@ main {
   }
 
   .about {
-    padding: 6rem 3rem; /* Keep about section padding! */
+    padding: 6rem 3rem;
   }
 
   .section h1,
@@ -214,7 +410,7 @@ main {
   }
 
   .about {
-    padding: 8rem 3rem; /* Even bigger on tablets! */
+    padding: 8rem 3rem;
   }
 
   .section h1,
@@ -222,13 +418,47 @@ main {
     font-size: 2rem;
   }
 
+  /* Keep cards stacked vertically */
   .project-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+  /* Horizontal buttons on tablet+ */
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: auto;
+    max-width: none;
+    padding: 0.75rem 2rem;
+  }
+
+  /* Project links horizontal on tablet+ */
+  .project-links {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .project-link {
+    width: auto;
+    padding: 0.5rem 1.2rem;
+    white-space: nowrap;
+  }
+
+  /* Skills horizontal on tablet+ */
+  .skills-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .skill-category {
+    flex: 1;
   }
 }
 
@@ -241,7 +471,7 @@ main {
   }
 
   .about {
-    padding: 10rem 4rem; /* Big hero space on desktop! */
+    padding: 10rem 4rem;
   }
 
   .section h1,
@@ -251,5 +481,20 @@ main {
 
   .content-wrapper {
     max-width: 700px;
+  }
+
+  .hero-buttons {
+    gap: 1.5rem;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* More space between skill categories */
+  .skills-container {
+    gap: 2rem;
   }
 }
