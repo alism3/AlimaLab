@@ -1,10 +1,16 @@
+import './HomePage.css';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { FaEnvelope } from 'react-icons/fa';
+
+
+
 function HomePage() {
     console.log("HomePage is rendering!");
   // Data strategy: Edit here to update site-wide
   const agencyData = {
-    name: 'Alim Lab',
-    tagline: 'Product Marketing & Full-Stack Agency',
-    about: 'Creative strategist growing startups through UX, content, and custom web apps. Perth-based, self-employed.',
+    name: <>Alice Maiorana</>,
+    tagline: 'Full-Stack Developer | Product Marketing Strategist',
+    about: <> Proud SheCoder building intuitive web apps with UX/UI passion. <br/> Full-stack developer who blends Sales, Customer Success, and Product Marketing to create human-centric digital experiences at Alima Lab.</>,
   };
 
   const projects = [
@@ -18,12 +24,27 @@ function HomePage() {
         {/* Section 1: About */}
         <section id="about" className="section about">
           <div className="content-wrapper">
-            <h1>{agencyData.name}</h1>
-            <p>{agencyData.tagline}</p>
+            <h1 className="name-title">{agencyData.name}</h1>
+            <p className="tagline">{agencyData.tagline}</p>
+
+            {/* Social Icons - Right after tagline! */}
+            <div className="social-icons">
+              <a href="https://github.com/alism3" target="_blank" rel="noopener noreferrer">
+                <SiGithub />
+              </a>
+              <a href="https://linkedin.com/in/alicemaiorana" target="_blank" rel="noopener noreferrer">
+                <SiLinkedin />
+              </a>
+              <a href="mailto:alima.lab.am@gmail.com">
+                <FaEnvelope />
+              </a>
+            </div>
+
             <p>{agencyData.about}</p>
-            <a href="#projects" className="btn-primary">See Projects</a>
+            <a href="#projects" className="btn-primary">Projects</a>
           </div>
         </section>
+
 
         {/* Section 2: Projects */}
         <section id="projects" className="section projects">
