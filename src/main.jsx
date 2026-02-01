@@ -8,17 +8,17 @@ import "./style.css";
 
 const router = createBrowserRouter([
   {
-      path: "/",
-      element: <NavBar />,
-      children: [
-          { path: "/", element: <HomePage /> },
-      ],
+    path: "/",
+    element: <NavBar />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "*", element: <HomePage /> }, // <-- THIS is the correct catch-all
+    ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-      {/* Here we wrap our app in the router provider so they render */}
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
