@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import "./NavBar.css";
 import logo from "../assets/logo.png";
 import mobileLogo from "../assets/MobileLogo.png";
@@ -12,27 +13,32 @@ function NavBar() {
   };
 
   return (
-    <header className="site-header">
-      <a href="#" onClick={scrollToTop} className="logo-link">
-        <img src={mobileLogo} alt="Alima Lab logo" className="logo mobile-logo" />
-        <img src={logo} alt="Alima Lab logo" className="logo desktop-logo" />
-      </a>
+    <>
+      <header className="site-header">
+        <a href="#" onClick={scrollToTop} className="logo-link">
+          <img src={mobileLogo} alt="Alima Lab logo" className="logo mobile-logo" />
+          <img src={logo} alt="Alima Lab logo" className="logo desktop-logo" />
+        </a>
 
-      <button 
-        className="hamburger" 
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
-      >
-        {menuOpen ? "✕" : "☰"}
-      </button>
+        <button 
+          className="hamburger" 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
 
-      <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
-        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
-        <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-      </nav>
-    </header>
+        <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        </nav>
+      </header>
+      
+      {/* This renders the child routes (HomePage) */}
+      <Outlet />
+    </>
   );
 }
 
