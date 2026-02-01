@@ -204,7 +204,6 @@ function HomePage() {
 
       <footer className="site-footer">
         <p>&copy; 2026 Alima Lab | Full-Stack Developer</p>
-        <a href="/cv/AliceMaiorana_CV.pdf" className="footer-link" download>Download CV</a>
       </footer>
     </>
   );
