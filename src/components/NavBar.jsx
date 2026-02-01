@@ -30,9 +30,9 @@ function NavBar() {
 
         <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
           <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-          <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contacts</a>
         </nav>
       </header>
       

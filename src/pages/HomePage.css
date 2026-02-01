@@ -8,7 +8,7 @@
 main {
   max-width: 960px;
   margin: 0 auto;
-  padding: 5rem 1rem 2rem; /* Mobile padding */
+  padding: 5rem 1rem 2rem;
 }
 
 /* Name Title - League Script Font */
@@ -18,6 +18,7 @@ main {
   font-weight: 400;
   color: var(--green-dark);
   line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(214, 171, 166, 0.3);
 }
 
 /* Social Icons */
@@ -54,9 +55,13 @@ main {
   box-shadow: 0 8px 20px rgba(232, 145, 138, 0.4);
 }
 
-/* Tagline - Bold */
+/* Tagline - Bold with gradient */
 .tagline {
   font-weight: 700;
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--burgundy) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Hero Buttons */
@@ -89,26 +94,26 @@ main {
 }
 
 .hero-buttons .btn-primary {
-  background: var(--green-mid);
+  background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-dark) 100%);
   color: var(--text-light);
   border: 3px solid var(--green-dark);
 }
 
 .hero-buttons .btn-primary:hover {
-  background: var(--green-dark);
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
   border-color: var(--green-dark);
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 8px 20px rgba(56, 97, 80, 0.4);
 }
 
 .hero-buttons .btn-secondary {
-  background: var(--rose-bright);
+  background: linear-gradient(135deg, var(--rose-bright) 0%, var(--burgundy) 100%);
   color: white;
   border: 3px solid var(--burgundy);
 }
 
 .hero-buttons .btn-secondary:hover {
-  background: var(--burgundy);
+  background: linear-gradient(135deg, var(--burgundy) 0%, var(--rose-bright) 100%);
   border-color: var(--burgundy);
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 8px 20px rgba(114, 47, 55, 0.5);
@@ -137,8 +142,9 @@ main {
   box-shadow: 0 4px 20px rgba(56, 97, 80, 0.1);
 }
 
-.about {
-  background: linear-gradient(135deg, var(--green-light) 0%, var(--rose-light) 100%);
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--green-light) 0%, var(--rose-light) 50%, rgba(232, 145, 138, 0.2) 100%);
   text-align: center;
   padding: 6rem 3rem;
   margin-bottom: 2rem;
@@ -147,14 +153,109 @@ main {
   align-items: center;
 }
 
-.projects,
-.skills {
-  background: var(--green-light);
+/* About Me Section - Reverse gradient (pink top-left, green bottom-right) */
+.about {
+  background: 
+    linear-gradient(315deg, 
+      rgba(88, 176, 156, 0.35) 0%, 
+      rgba(202, 247, 226, 0.5) 25%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(250, 226, 223, 0.6) 75%,
+      rgba(232, 145, 138, 0.3) 100%
+    );
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid var(--rose-bright);
+  border-bottom: 2px solid var(--green-mid);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Glow effect top-left (pink) */
+.about::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(232, 145, 138, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glow effect bottom-right (green) */
+.about::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(88, 176, 156, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about h2 {
+  color: var(--burgundy);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.about-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.about-content strong {
+  color: var(--burgundy);
+}
+
+/* Projects - Neutral background */
+.projects {
+  background: rgba(255, 255, 255, 0.5);
+  border-top: 4px solid var(--green-mid);
+}
+
+/* Skills - Green gradient */
+.skills {
+  background: linear-gradient(180deg, var(--green-light) 0%, rgba(88, 176, 156, 0.15) 100%);
+  border-top: 4px solid var(--green-mid);
+}
+
+/* Contact - Mixed gradient, centered */
 .contact {
-  background: var(--rose-light);
-  border: 2px solid var(--green-light);
+  background: linear-gradient(135deg, var(--rose-light) 0%, var(--green-light) 100%);
+  border: 2px solid var(--green-mid);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+.contact p {
+  margin: 0 auto 1.5rem;
+  max-width: 500px;
 }
 
 .section h1,
@@ -162,6 +263,22 @@ main {
   font-weight: 600;
   margin-bottom: 1rem;
   font-size: 1.5rem;
+}
+
+/* Section titles with accent */
+.projects h2 {
+  color: var(--green-dark);
+}
+
+.skills h2 {
+  color: var(--green-dark);
+}
+
+.contact h2 {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--burgundy) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .section p {
@@ -185,32 +302,158 @@ main {
   gap: 2rem;
 }
 
+/* Base Project Card */
 .project-card {
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.7);
   border-radius: 16px;
-  border-left: 4px solid var(--green-mid);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 350px;
+  position: relative;
+  overflow: hidden;
 }
 
-.project-card:hover {
+/* ODD cards (1st, 3rd) - Pink/Rose theme */
+.project-card:nth-child(odd) {
+  background: 
+    linear-gradient(135deg, 
+      rgba(232, 145, 138, 0.25) 0%, 
+      rgba(250, 226, 223, 0.5) 30%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.9) 70%,
+      rgba(250, 226, 223, 0.3) 100%
+    );
+  border-left: 4px solid var(--rose-bright);
+  border-bottom: 2px solid var(--burgundy);
+}
+
+.project-card:nth-child(odd)::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(232, 145, 138, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.project-card:nth-child(odd)::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(214, 171, 166, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.project-card:nth-child(odd):hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(56, 97, 80, 0.15);
+  box-shadow: 
+    0 8px 25px rgba(232, 145, 138, 0.2),
+    0 4px 15px rgba(114, 47, 55, 0.1);
+  border-left-color: var(--burgundy);
+}
+
+.project-card:nth-child(odd) h3 {
+  color: var(--burgundy);
+}
+
+.project-card:nth-child(odd) h3::after {
+  background: linear-gradient(90deg, var(--rose-bright) 0%, var(--burgundy) 100%);
+}
+
+.project-card:nth-child(odd) .project-features li::before {
+  color: var(--rose-bright);
+}
+
+/* EVEN cards (2nd) - Green theme */
+.project-card:nth-child(even) {
+  background: 
+    linear-gradient(135deg, 
+      rgba(88, 176, 156, 0.25) 0%, 
+      rgba(202, 247, 226, 0.5) 30%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.9) 70%,
+      rgba(202, 247, 226, 0.3) 100%
+    );
+  border-left: 4px solid var(--green-mid);
+  border-bottom: 2px solid var(--green-dark);
+}
+
+.project-card:nth-child(even)::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(88, 176, 156, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.project-card:nth-child(even)::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(202, 247, 226, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.project-card:nth-child(even):hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 8px 25px rgba(56, 97, 80, 0.2),
+    0 4px 15px rgba(88, 176, 156, 0.15);
+  border-left-color: var(--green-dark);
+}
+
+.project-card:nth-child(even) h3 {
+  color: var(--green-dark);
+}
+
+.project-card:nth-child(even) h3::after {
+  background: linear-gradient(90deg, var(--green-mid) 0%, var(--green-dark) 100%);
+}
+
+.project-card:nth-child(even) .project-features li::before {
+  color: var(--green-mid);
 }
 
 .project-card h3 {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
-  color: var(--green-dark);
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.project-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
 }
 
 .project-card > p {
   margin-bottom: 1rem;
   color: var(--text-main);
+  position: relative;
+  z-index: 1;
 }
 
 /* Project Links */
@@ -221,6 +464,8 @@ main {
   margin-top: auto;
   padding-top: 1rem;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .project-link {
@@ -229,7 +474,7 @@ main {
   justify-content: center;
   gap: 0.4rem;
   padding: 0.6rem 1rem;
-  background: var(--green-dark);
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
   color: white;
   text-decoration: none;
   border-radius: 20px;
@@ -241,9 +486,9 @@ main {
 }
 
 .project-link:hover {
-  background: var(--green-mid);
+  background: linear-gradient(135deg, var(--burgundy) 0%, var(--rose-bright) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(56, 97, 80, 0.3);
+  box-shadow: 0 4px 12px rgba(114, 47, 55, 0.3);
 }
 
 /* Project Features List - Arrow bullets */
@@ -252,9 +497,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  margin-bottom: 2rem; 
+  margin-bottom: 2rem;
   padding-left: 0;
-  flex-grow: 1; 
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .project-features li {
@@ -267,26 +514,34 @@ main {
 
 .project-features li::before {
   content: '→';
-  color: var(--green-mid);
   font-weight: 600;
 }
 
-/* Project Tags - Green pills */
+/* Project Tags - All green pills */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .project-tags span {
-  background: var(--green-light);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.8rem;
-  color: var(--green-dark);
   font-weight: 500;
+  transition: all 0.3s ease;
+  background: var(--green-light);
+  color: var(--green-dark);
   border: 1px solid var(--green-mid);
+}
+
+.project-tags span:hover {
+  background: var(--green-mid);
+  color: white;
+  transform: scale(1.05);
 }
 
 /* 4. Skills Section */
@@ -297,12 +552,27 @@ main {
 }
 
 .skill-category {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 16px;
   padding: 1.5rem;
-  border-left: 4px solid var(--green-mid);
   box-shadow: 0 4px 10px rgba(56, 97, 80, 0.1);
   transition: all 0.3s ease;
+}
+
+/* Alternating border colors for skill categories */
+.skill-category:nth-child(1) {
+  border-left: 4px solid var(--green-mid);
+  border-bottom: 2px solid var(--green-light);
+}
+
+.skill-category:nth-child(2) {
+  border-left: 4px solid var(--rose-bright);
+  border-bottom: 2px solid var(--rose-light);
+}
+
+.skill-category:nth-child(3) {
+  border-left: 4px solid var(--burgundy);
+  border-bottom: 2px solid var(--rose-dark);
 }
 
 .skill-category:hover {
@@ -319,9 +589,20 @@ main {
   gap: 0.5rem;
 }
 
-.skill-category h3::before {
+/* Alternating arrow colors */
+.skill-category:nth-child(1) h3::before {
+  content: '▸';
+  color: var(--green-mid);
+}
+
+.skill-category:nth-child(2) h3::before {
   content: '▸';
   color: var(--rose-bright);
+}
+
+.skill-category:nth-child(3) h3::before {
+  content: '▸';
+  color: var(--burgundy);
 }
 
 .skill-list {
@@ -333,14 +614,14 @@ main {
 }
 
 .skill-list li {
-  background: var(--green-light);
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   font-size: 0.85rem;
-  color: var(--green-dark);
   font-weight: 500;
-  border: 1px solid var(--green-mid);
   transition: all 0.3s ease;
+  background: var(--green-light);
+  color: var(--green-dark);
+  border: 1px solid var(--green-mid);
 }
 
 .skill-list li:hover {
@@ -349,7 +630,7 @@ main {
   transform: scale(1.05);
 }
 
-/* 5. Contact Links */
+/* 5. Contact Section */
 .contact-links {
   list-style: none;
   display: flex;
@@ -358,12 +639,14 @@ main {
 }
 
 .contact-links a {
-  color: var(--green-mid);
+  color: var(--green-dark);
   text-decoration: none;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .contact-links a:hover {
+  color: var(--burgundy);
   text-decoration: underline;
 }
 
@@ -371,7 +654,7 @@ main {
 .site-footer {
   text-align: center;
   padding: 1.5rem;
-  background: var(--green-dark);
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--burgundy) 100%);
   color: var(--text-light);
 }
 
@@ -387,13 +670,32 @@ main {
     padding: 2.5rem 2rem;
   }
 
-  .about {
+  .hero {
     padding: 6rem 3rem;
+  }
+
+  .about {
+    padding: 3rem 2.5rem;
+  }
+
+  .contact {
+    padding: 3rem 2.5rem;
   }
 
   .section h1,
   .section h2 {
     font-size: 1.75rem;
+  }
+
+  /* Larger glow effects on larger phones */
+  .about::before {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about::after {
+    width: 280px;
+    height: 280px;
   }
 }
 
@@ -409,8 +711,16 @@ main {
     padding: 3rem 2.5rem;
   }
 
-  .about {
+  .hero {
     padding: 8rem 3rem;
+  }
+
+  .about {
+    padding: 4rem 3rem;
+  }
+
+  .contact {
+    padding: 4rem 3rem;
   }
 
   .section h1,
@@ -460,6 +770,33 @@ main {
   .skill-category {
     flex: 1;
   }
+
+  /* Larger glow effects on tablet */
+  .about::before {
+    width: 280px;
+    height: 280px;
+    top: -50px;
+    left: -50px;
+  }
+
+  .about::after {
+    width: 350px;
+    height: 350px;
+    bottom: -60px;
+    right: -60px;
+  }
+
+  .project-card:nth-child(odd)::before,
+  .project-card:nth-child(even)::before {
+    width: 180px;
+    height: 180px;
+  }
+
+  .project-card:nth-child(odd)::after,
+  .project-card:nth-child(even)::after {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 /* ================================
@@ -470,8 +807,16 @@ main {
     padding: 8rem 2rem 4rem;
   }
 
-  .about {
+  .hero {
     padding: 10rem 4rem;
+  }
+
+  .about {
+    padding: 5rem 4rem;
+  }
+
+  .contact {
+    padding: 5rem 4rem;
   }
 
   .section h1,
@@ -496,5 +841,32 @@ main {
   /* More space between skill categories */
   .skills-container {
     gap: 2rem;
+  }
+
+  /* Larger glow effects on desktop */
+  .about::before {
+    width: 350px;
+    height: 350px;
+    top: -80px;
+    left: -80px;
+  }
+
+  .about::after {
+    width: 400px;
+    height: 400px;
+    bottom: -100px;
+    right: -100px;
+  }
+
+  .project-card:nth-child(odd)::before,
+  .project-card:nth-child(even)::before {
+    width: 200px;
+    height: 200px;
+  }
+
+  .project-card:nth-child(odd)::after,
+  .project-card:nth-child(even)::after {
+    width: 220px;
+    height: 220px;
   }
 }
