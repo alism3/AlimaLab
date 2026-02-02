@@ -9,7 +9,8 @@ function HomePage() {
     name: <>Alice Maiorana</>,
     tagline: 'Full-Stack Developer | Product Marketing Strategist',
     intro: <>Proud SheCoder crafting intuitive web apps with UX/UI passion.</>,
-    about: <>I'm a full-stack developer blending <strong>Sales</strong>, <strong>Customer Success</strong>, and <strong>Product Marketing</strong> to build human-centric digital experiences. <br/><br/>Based in <strong>Australia</strong>, I transform ideas into functional web apps—from quirky alpaca crowdfunding to collaborative music platforms. <br/><br/>My <strong>"peculiar personality"</strong> embraces challenges and thrives on direct feedback. When not coding, I'm designing UX patterns or growing <strong>Alima Lab</strong>.</>,
+    about: <>I'm a full-stack developer blending <strong>Sales</strong>, <strong>Customer Success</strong>, and <strong>Product Marketing</strong> to build human-centric digital experiences. <strong>SheCodes Australia $10K Scholarship Recipient</strong>
+<br/><br/>Based in <strong>Australia</strong>, I transform ideas into beautiful and easy web apps—from quirky alpaca crowdfunding to collaborative music platforms. <br/><br/>My <strong>"peculiar personality"</strong> embraces challenges and thrives on direct feedback. When not coding, I'm designing UX patterns or growing <strong>Alima Lab</strong>.</>,
   };
 
   const projects = [
@@ -50,7 +51,7 @@ function HomePage() {
       ],
       tags: ['React', 'CSS', 'Vite'],
       liveUrl: null,
-      frontendRepo: 'https://github.com/alism3/portfolio',
+      frontendRepo: 'https://github.com/alism3/AlimaLab',
       backendRepo: null,
     },
   ];
