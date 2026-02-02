@@ -710,6 +710,77 @@ main {
   }
 }
 
+/* Contact Buttons - match hero style and width to social icons */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem; 
+  width: 100%;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 0 0 0; /* Remove top margin, keep only bottom if needed */
+  width: 100%;
+}
+
+.contact-buttons .btn-primary {
+  width: 100%;
+  max-width: 340px; /* Adjust to match the width of the social icons row */
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(56, 97, 80, 0.3);
+  background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-dark) 100%);
+  color: var(--text-light);
+  border: 3px solid var(--green-dark);
+}
+
+.contact-buttons .btn-primary:hover {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+  border-color: var(--green-dark);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(56, 97, 80, 0.4);
+}
+
+/* Pink secondary button for contact section */
+.contact-buttons .btn-secondary {
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(114, 47, 55, 0.3);
+  background: linear-gradient(135deg, var(--rose-bright) 0%, var(--burgundy) 100%);
+  color: white;
+  border: 3px solid var(--burgundy);
+}
+
+.contact-buttons .btn-secondary:hover {
+  background: linear-gradient(135deg, var(--burgundy) 0%, var(--rose-bright) 100%);
+  border-color: var(--burgundy);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(114, 47, 55, 0.5);
+}
+
 /* ================================
    TABLETS (768px+)
    ================================ */

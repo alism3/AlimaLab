@@ -188,6 +188,18 @@ function HomePage() {
           <h2>Let's Build Together</h2>
           <p>Ready to create something amazing?</p>
           
+          {/* Call to Action Button */}
+          <div className="contact-buttons">
+            <a
+              href="https://calendly.com/alima-lab-am/30min"
+              className="btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Call
+            </a>
+          </div>
+
           {/* Social Icons */}
           <div className="social-icons">
             <a href="https://github.com/alism3" target="_blank" rel="noopener noreferrer">
