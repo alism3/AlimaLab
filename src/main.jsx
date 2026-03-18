@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./pages/HomePage.jsx";
 import NavBar from "./components/NavBar.jsx";
+import ServicePage from "./pages/ServicePage.jsx";
 import "./style.css";
 
 const router = createBrowserRouter([
@@ -12,7 +13,8 @@ const router = createBrowserRouter([
     element: <NavBar />,
     children: [
       { path: "/", element: <HomePage /> },
-      { path: "*", element: <HomePage /> }, // <-- THIS is the correct catch-all
+      { path: "/services", element: <ServicePage /> },
+      { path: "*", element: <HomePage /> },
     ],
   },
 ]);

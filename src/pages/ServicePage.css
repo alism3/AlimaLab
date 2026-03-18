@@ -1,0 +1,291 @@
+/* ================================
+   SERVICE PAGE STYLES
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=League+Script&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Layout */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 1rem 2rem;
+}
+
+/* Hero Section */
+.service-hero {
+  background: linear-gradient(135deg, var(--green-light) 0%, var(--rose-light) 50%, rgba(232, 145, 138, 0.2) 100%);
+  text-align: center;
+  padding: 6rem 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-title {
+  font-family: 'League Script', cursive;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 400;
+  color: var(--green-dark);
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(214, 171, 166, 0.3);
+}
+
+.service-intro {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--text-main);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Service Blocks */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-card {
+  padding: 2rem 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(56, 97, 80, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.service-card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-main);
+}
+
+.service-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.2rem;
+}
+
+.service-card ul li {
+  font-size: 0.98rem;
+  margin-bottom: 0.4rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.service-card ul li::before {
+  content: '▸';
+  color: var(--green-mid);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.service-price {
+  font-weight: 600;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(56, 97, 80, 0.15);
+  margin-top: 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-dark) 100%);
+  color: var(--text-light);
+  border: 3px solid var(--green-dark);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+  border-color: var(--green-dark);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(56, 97, 80, 0.2);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--rose-bright) 0%, var(--burgundy) 100%);
+  color: white;
+  border: 3px solid var(--burgundy);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--burgundy) 0%, var(--rose-bright) 100%);
+  border-color: var(--burgundy);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(114, 47, 55, 0.2);
+}
+
+/* Service Card Themes */
+.service-card.entry {
+  background: linear-gradient(135deg, rgba(232, 145, 138, 0.18) 0%, rgba(250, 226, 223, 0.3) 40%, #fff 100%);
+  border-left: 4px solid var(--rose-bright);
+  border-bottom: 2px solid var(--burgundy);
+}
+
+.service-card.core {
+  background: linear-gradient(135deg, rgba(88, 176, 156, 0.18) 0%, rgba(202, 247, 226, 0.3) 40%, #fff 100%);
+  border-left: 4px solid var(--green-mid);
+  border-bottom: 2px solid var(--green-dark);
+}
+
+.service-card.premium {
+  background: linear-gradient(135deg, rgba(214, 171, 166, 0.18) 0%, rgba(232, 145, 138, 0.15) 40%, #fff 100%);
+  border-left: 4px solid var(--burgundy);
+  border-bottom: 2px solid var(--rose-dark);
+}
+
+/* Addition Section */
+.service-addition {
+  background: linear-gradient(135deg, var(--green-light) 0%, var(--rose-light) 100%);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-radius: 20px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 20px rgba(56, 97, 80, 0.08);
+}
+
+.service-addition h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+}
+
+.service-addition p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-main);
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Styles */
+@media (min-width: 480px) {
+  main {
+    padding: 6rem 1.5rem 3rem;
+  }
+  .service-card {
+    padding: 2.5rem 2rem;
+  }
+  .service-addition {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .services-list {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .service-card {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding: 8rem 2rem 4rem;
+  }
+  .service-hero {
+    padding: 10rem 4rem;
+  }
+  .service-addition {
+    padding: 4rem 3rem;
+  }
+  .service-card h2 {
+    font-size: 1.5rem;
+  }
+}
+.service-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Match project-card style from HomePage */
+.project-card {
+  background: linear-gradient(135deg, var(--green-light) 0%, var(--rose-light) 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(56, 97, 80, 0.12);
+  padding: 2.5rem 1.5rem;
+  margin-bottom: 0;
+  transition: box-shadow 0.3s;
+  border: 2px solid var(--rose-light);
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 32px rgba(232, 145, 138, 0.18);
+}
+
+.project-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--green-dark);
+}
+
+.project-card p {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.project-features {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.2rem;
+}
+
+.project-features li {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.project-features li::before {
+  content: '▸';
+  color: var(--rose-bright);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .service-grid {
+    gap: 2.5rem;
+  }
+  .project-card {
+    padding: 3rem 2rem;
+  }
+}

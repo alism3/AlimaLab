@@ -163,6 +163,30 @@
   }
 }
 
+.main-nav .nav-btn {
+  color: var(--text-light);
+  font-family: inherit;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: none;
+  font-size: 1rem;
+}
+
+.main-nav .nav-btn:hover,
+.main-nav .nav-btn.active {
+  background: linear-gradient(135deg, var(--rose-light) 0%, var(--rose-bright) 100%);
+  color: var(--green-dark);
+  transform: translateX(5px);
+  border-color: var(--rose-bright);
+  font-weight: 600;
+}
+
+
 /* ================================
    DESKTOP (1024px+)
    ================================ */
@@ -179,8 +203,16 @@
     gap: 0.5rem;
   }
 
-  .main-nav a {
+  .main-nav a,
+  .main-nav .nav-btn {
     padding: 0.6rem 1.5rem;
     font-size: 1rem;
+    border-radius: 20px;
+  }
+
+  .main-nav a:hover,
+  .main-nav .nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 145, 138, 0.3);
   }
 }

@@ -7,8 +7,8 @@ function HomePage() {
 
   const aboutData = {
     name: <>Alice Maiorana</>,
-    tagline: 'Full-Stack Developer | Product Marketing Strategist',
-    intro: <>Proud SheCoder crafting intuitive web apps with UX/UI passion.</>,
+    tagline: '- Designing clear, beautiful websites that help small businesses grow -',
+    intro: <>UX/UI designer creating thoughtful digital experiences for small businesses and personal brands. I combine strategy, empathy, and design to build websites that feel good to use and easy to trust.</>,
     about: <>I'm a full-stack developer blending <strong>Sales</strong>, <strong>Customer Success</strong>, and <strong>Product Marketing</strong> to build human-centric digital experiences. <strong>SheCodes Australia $10K Scholarship Recipient</strong>
 <br/><br/>Based in <strong>Australia</strong>, I transform ideas into beautiful and easy web apps—from quirky alpaca crowdfunding to collaborative music platforms. <br/><br/>My <strong>"peculiar personality"</strong> embraces challenges and thrives on direct feedback. When not coding, I'm designing UX patterns or growing <strong>Alima Lab</strong>.</>,
   };
@@ -83,7 +83,7 @@ function HomePage() {
             {/* Hero Buttons */}
             <div className="hero-buttons">
               <a href="#projects" className="btn-primary">Projects</a>
-              <a href="https://calendly.com/alima-lab-am/30min" className="btn-secondary" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              <a href="https://calendly.com/alima-lab-am/30min" className="btn-secondary" target="_blank" rel="noopener noreferrer">Get in Touch</a>
             </div>
           </div>
         </section>
