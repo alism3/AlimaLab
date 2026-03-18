@@ -83,8 +83,106 @@ function HomePage() {
             {/* Hero Buttons */}
             <div className="hero-buttons">
               <a href="#projects" className="btn-primary">Projects</a>
-              <a href="https://calendly.com/alima-lab-am/30min" className="btn-secondary" target="_blank" rel="noopener noreferrer">Get in Touch</a>
+              <a href="https://calendly.com/alima-lab-am/30min" className="btn-secondary" target="_blank" rel="noopener noreferrer">View Services</a>
             </div>
+          </div>
+        </section>
+
+        {/* Section 2: Services */}
+        <section id="services" className="section services-home services-box">
+          <h2 className="services-title">Ways We Can Work Together</h2>
+          <p className="services-intro">
+            I design thoughtful digital experiences tailored to your brand and your goals. <br />
+            Whether you need small improvements or a complete website, I offer solutions that bring clarity, structure, and intention to your online presence.
+          </p>
+          <div className="services-cards">
+            {/* Starter Offer */}
+            <div className="service-card-home project-card">
+              <h3>Starter Offer</h3>
+              <strong>Website Audit + UX Fixes</strong>
+              <ul className="project-features">
+                <li>Review your website</li>
+                <li>Give improvements</li>
+                <li>Optional small redesign</li>
+              </ul>
+              <div className="service-price-home">💰 $150 – $300 (first clients)</div>
+              <span className="service-note">PERFECT for beginners</span>
+              <div className="service-btn-row">
+                <a href="/services" className="btn-primary">See Details</a>
+              </div>
+            </div>
+            {/* Core Offer */}
+            <div className="service-card-home project-card">
+              <h3>Core Offer</h3>
+              <strong>Website Design (Simple)</strong>
+              <ul className="project-features">
+                <li>3–5 pages</li>
+                <li>Clean + structured</li>
+                <li>Mobile friendly</li>
+              </ul>
+              <div className="service-price-home">💰 $500 – $1200</div>
+              <div className="service-btn-row">
+                <a href="/services" className="btn-primary">See Details</a>
+              </div>
+            </div>
+            {/* Premium Offer */}
+            <div className="service-card-home project-card">
+              <h3>Premium Offer</h3>
+              <strong>Brand + Website Experience</strong>
+              <ul className="project-features">
+                <li>Branding + UX + website</li>
+                <li>Strategy + structure</li>
+              </ul>
+              <div className="service-price-home">💰 $1200 – $2500+</div>
+              <div className="service-btn-row">
+                <a href="/services" className="btn-primary">See Details</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Section 3: Projects */}
+        <section id="projects" className="section projects">
+          <h2>Projects</h2>
+          <div className="project-grid">
+            {projects.map((project, index) => (
+              <article key={index} className="project-card">
+                <h3>{project.title}</h3>
+                <p>{project.desc}</p>
+                
+                {/* Tags as pills */}
+                <div className="project-tags">
+                  {project.tags.map((tag, i) => (
+                    <span key={i}>{tag}</span>
+                  ))}
+                </div>
+
+                {/* Key Features with arrows */}
+                <ul className="project-features">
+                  {project.features.map((feature, i) => (
+                    <li key={i}>{feature}</li>
+                  ))}
+                </ul>
+
+                {/* Project Links */}
+                <div className="project-links">
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                      <FaExternalLinkAlt /> View Live
+                    </a>
+                  )}
+                  {project.frontendRepo && (
+                    <a href={project.frontendRepo} target="_blank" rel="noopener noreferrer" className="project-link">
+                      <FaCode /> Frontend
+                    </a>
+                  )}
+                  {project.backendRepo && (
+                    <a href={project.backendRepo} target="_blank" rel="noopener noreferrer" className="project-link">
+                      <FaCode /> Backend
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -134,52 +232,6 @@ function HomePage() {
               </ul>
             </div>
 
-          </div>
-        </section>
-
-        {/* Section 4: Projects */}
-        <section id="projects" className="section projects">
-          <h2>Projects</h2>
-          <div className="project-grid">
-            {projects.map((project, index) => (
-              <article key={index} className="project-card">
-                <h3>{project.title}</h3>
-                <p>{project.desc}</p>
-                
-                {/* Tags as pills */}
-                <div className="project-tags">
-                  {project.tags.map((tag, i) => (
-                    <span key={i}>{tag}</span>
-                  ))}
-                </div>
-
-                {/* Key Features with arrows */}
-                <ul className="project-features">
-                  {project.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-
-                {/* Project Links */}
-                <div className="project-links">
-                  {project.liveUrl && (
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <FaExternalLinkAlt /> View Live
-                    </a>
-                  )}
-                  {project.frontendRepo && (
-                    <a href={project.frontendRepo} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <FaCode /> Frontend
-                    </a>
-                  )}
-                  {project.backendRepo && (
-                    <a href={project.backendRepo} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <FaCode /> Backend
-                    </a>
-                  )}
-                </div>
-              </article>
-            ))}
           </div>
         </section>
 

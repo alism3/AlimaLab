@@ -237,6 +237,80 @@ main {
   color: var(--burgundy);
 }
 
+.services-home {
+  /* Remove background, keep padding and shadow from .section */
+  background: none;
+  box-shadow: none;
+  padding-bottom: 0;
+}
+
+.services-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-card-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 340px;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(56, 97, 80, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Alternating backgrounds like project cards */
+.services-cards .service-card-home:nth-child(odd) {
+  background: linear-gradient(135deg, rgba(232,145,138,0.25) 0%, rgba(250,226,223,0.5) 30%, #fff 50%, #fff 90%);
+  border-left: 4px solid var(--rose-bright);
+  border-bottom: 2px solid var(--burgundy);
+}
+.services-cards .service-card-home:nth-child(even) {
+  background: linear-gradient(135deg, rgba(88,176,156,0.25) 0%, rgba(202,247,226,0.5) 30%, #fff 50%, #fff 90%);
+  border-left: 4px solid var(--green-mid);
+  border-bottom: 2px solid var(--green-dark);
+}
+
+/* Button row for alignment */
+.service-btn-row {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive: horizontal cards on desktop */
+@media (min-width: 768px) {
+  .services-cards {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .service-card-home {
+    flex: 1;
+    min-width: 0;
+  }
+}
+.services-box {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(232, 145, 138, 0.08);
+  border-top: 4px solid var(--rose-bright); /* Rose top border */
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.section .services-intro {
+  max-width: 100% !important;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+  font-size: 1.1rem;
+  color: var(--green-dark);
+}
+
 /* Projects */
 .projects {
   background: rgba(255, 255, 255, 0.5);
@@ -943,5 +1017,13 @@ main {
   .project-card:nth-child(even)::after {
     width: 220px;
     height: 220px;
+  }
+}
+
+@media (min-width: 768px) {
+  .services-intro {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
