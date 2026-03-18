@@ -232,7 +232,6 @@ main {
 
 /* Match project-card style from HomePage */
 .project-card {
-  background: linear-gradient(135deg, var(--green-light) 0%, var(--rose-light) 100%);
   border-radius: 18px;
   box-shadow: 0 4px 20px rgba(56, 97, 80, 0.12);
   padding: 2.5rem 1.5rem;
@@ -288,4 +287,30 @@ main {
   .project-card {
     padding: 3rem 2rem;
   }
+}
+/* Minimal, alternating card backgrounds and borders */
+.service-grid .project-card:nth-child(odd) {
+  background: 
+    linear-gradient(135deg, 
+      rgba(232, 145, 138, 0.25) 0%, 
+      rgba(250, 226, 223, 0.5) 30%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.9) 70%,
+      rgba(250, 226, 223, 0.3) 100%
+    );
+  border-left: 4px solid var(--rose-bright);
+  border-bottom: 2px solid var(--burgundy);
+}
+
+.service-grid .project-card:nth-child(even) {
+  background: 
+    linear-gradient(135deg, 
+      rgba(88, 176, 156, 0.25) 0%, 
+      rgba(202, 247, 226, 0.5) 30%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.9) 70%,
+      rgba(202, 247, 226, 0.3) 100%
+    );
+  border-left: 4px solid var(--green-mid);
+  border-bottom: 2px solid var(--green-dark);
 }
